@@ -159,7 +159,7 @@ function cot_build_structure_folio_tree($parent = '', $selected = '', $level = 0
 			"ROW_ICON" => $structure['folio'][$row]['icon'],
 			"ROW_HREF" => cot_url("folio", $urlparams),
 			"ROW_SELECTED" => ((is_array($selected) && in_array($row, $selected)) || (!is_array($selected) && $row == $selected)) ? 1 : 0,
-			"ROW_SUBCAT" => (count($subcats) > 0) ? cot_build_structure_folio_tree($row, $selected, $level + 1) : '',
+			"ROW_SUBCAT" => (count($subcats) > 0) ? cot_build_structure_folio_tree($row, $selected, $level + 1, $template) : '', // Нужно передать переменную шаблона дочернему элементу
 			"ROW_LEVEL" => $level,
 			"ROW_ODDEVEN" => cot_build_oddeven($jj),
 			"ROW_JJ" => $jj
